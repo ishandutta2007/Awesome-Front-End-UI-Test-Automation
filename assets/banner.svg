@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#060911" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="tagGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="techGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.7" stroke-opacity="0.25" />
+      <circle cx="40" cy="40" r="1.5" fill="#38bdf8" fill-opacity="0.2" />
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      fill: #ffffff;
+      letter-spacing: -0.5px;
+    }
+    .subtitle-text {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 21px;
+      fill: #94a3b8;
+    }
+    .badge-text {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      fill: #e2e8f0;
+      letter-spacing: 0.5px;
+    }
+    .floating-card-title {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      fill: #38bdf8;
+    }
+    .floating-card-sub {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      fill: #64748b;
+    }
+
+    /* Ambient Pulsing Glow Animations */
+    @keyframes pulseOrb {
+      0% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+      50% { transform: scale(1.15) translate(25px, -15px); opacity: 0.6; }
+      100% { transform: scale(1) translate(0px, 0px); opacity: 0.35; }
+    }
+    @keyframes pulseOrb2 {
+      0% { transform: scale(1.1) translate(0px, 0px); opacity: 0.3; }
+      50% { transform: scale(0.9) translate(-30px, 20px); opacity: 0.55; }
+      100% { transform: scale(1.1) translate(0px, 0px); opacity: 0.3; }
+    }
+    @keyframes scanBeam {
+      0% { transform: translateY(-50px); opacity: 0; }
+      30% { opacity: 0.7; }
+      70% { opacity: 0.7; }
+      100% { transform: translateY(440px); opacity: 0; }
+    }
+    @keyframes floatPill {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .orb1 {
+      animation: pulseOrb 8s ease-in-out infinite;
+      transform-origin: 200px 100px;
+    }
+    .orb2 {
+      animation: pulseOrb2 10s ease-in-out infinite;
+      transform-origin: 1000px 300px;
+    }
+    .scanner {
+      animation: scanBeam 6s linear infinite;
+    }
+    .float-card-1 {
+      animation: floatPill 5s ease-in-out infinite;
+    }
+    .float-card-2 {
+      animation: floatPill 6s ease-in-out infinite 1.5s;
+    }
+    .float-card-3 {
+      animation: floatPill 5.5s ease-in-out infinite 0.75s;
+    }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="420" fill="url(#bgGrad)" />
+  <rect width="1200" height="420" fill="url(#techGrid)" />
+
+  <!-- Dynamic Glowing Orbs in Background -->
+  <g filter="url(#glow)">
+    <circle class="orb1" cx="220" cy="120" r="160" fill="#0284c7" filter="url(#glow)" />
+    <circle class="orb2" cx="1020" cy="280" r="180" fill="#7c3aed" filter="url(#glow)" />
+    <circle cx="620" cy="380" r="110" fill="#0d9488" opacity="0.25" filter="url(#glow)" />
+  </g>
+
+  <!-- Animated Scanning Laser Line -->
+  <g class="scanner">
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="url(#accentGrad)" stroke-width="2" stroke-opacity="0.7" />
+  </g>
+
+  <!-- Dynamic Decorative Visual Status Cards (Right Side, Layered Safely) -->
+  <g class="float-card-1" transform="translate(860, 60)">
+    <rect width="270" height="74" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+    <circle cx="28" cy="37" r="10" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="2" />
+    <circle cx="28" cy="37" r="4" fill="#10b981" />
+    <text x="52" y="32" class="floating-card-title">Playwright &amp; Selenium</text>
+    <text x="52" y="52" class="floating-card-sub">Parallel Cross-Browser: PASS</text>
+  </g>
+
+  <g class="float-card-2" transform="translate(890, 160)">
+    <rect width="250" height="74" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+    <circle cx="28" cy="37" r="10" fill="#38bdf8" fill-opacity="0.2" stroke="#38bdf8" stroke-width="2" />
+    <path d="M 23 37 L 27 41 L 34 33" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+    <text x="52" y="32" class="floating-card-title">Cloud Execution Grids</text>
+    <text x="52" y="52" class="floating-card-sub">3,000+ Real Devices &amp; Browsers</text>
+  </g>
+
+  <g class="float-card-3" transform="translate(840, 260)">
+    <rect width="280" height="74" rx="12" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.2" />
+    <circle cx="28" cy="37" r="10" fill="#a855f7" fill-opacity="0.2" stroke="#a855f7" stroke-width="2" />
+    <circle cx="28" cy="37" r="4" fill="#a855f7" />
+    <text x="52" y="32" class="floating-card-title">AI Self-Healing &amp; MCP</text>
+    <text x="52" y="52" class="floating-card-sub">Zero-Flake Autonomous QA</text>
+  </g>
+
+  <!-- Main Hero Text Section (Always Foreground, Clear & Visible) -->
+  <g transform="translate(70, 75)">
+    <!-- Category Pill Badge -->
+    <rect width="250" height="34" rx="17" fill="url(#tagGrad)" />
+    <text x="18" y="22" class="badge-text">⚡ AWESOME QUALITY ENGINEERING</text>
+
+    <!-- Main Title -->
+    <text x="0" y="95" class="title-text">
+      Front-End UI Test
+    </text>
+    <text x="0" y="150" class="title-text" fill="url(#accentGrad)">
+      Automation Ecosystem
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="200" class="subtitle-text">
+      Curated open-source frameworks, cloud grids, AI tools &amp; execution engines
+    </text>
+
+    <!-- Feature Pills -->
+    <g transform="translate(0, 235)">
+      <!-- Pill 1 -->
+      <g>
+        <rect width="135" height="32" rx="16" fill="#1e293b" stroke="#475569" stroke-width="1" />
+        <text x="18" y="21" class="badge-text" fill="#38bdf8">🌐 Cross-Browser</text>
+      </g>
+      <!-- Pill 2 -->
+      <g transform="translate(145, 0)">
+        <rect width="135" height="32" rx="16" fill="#1e293b" stroke="#475569" stroke-width="1" />
+        <text x="18" y="21" class="badge-text" fill="#a855f7">🚀 E2E &amp; Grids</text>
+      </g>
+      <!-- Pill 3 -->
+      <g transform="translate(290, 0)">
+        <rect width="140" height="32" rx="16" fill="#1e293b" stroke="#475569" stroke-width="1" />
+        <text x="18" y="21" class="badge-text" fill="#34d399">🤖 AI &amp; Heuristics</text>
+      </g>
+      <!-- Pill 4 -->
+      <g transform="translate(440, 0)">
+        <rect width="125" height="32" rx="16" fill="#1e293b" stroke="#475569" stroke-width="1" />
+        <text x="18" y="21" class="badge-text" fill="#f59e0b">📊 Metrics &amp; CI</text>
+      </g>
+    </g>
+  </g>
+</svg>
