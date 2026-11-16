@@ -1,6 +1,6 @@
 # Awesome-Front-End-UI-Test-Automation
 
-# Top Front-End UI Test Automation Ecosystem
+## Top Front-End UI Test Automation Ecosystem
 
 **Curated List of SaaS Platforms & Open-Source GitHub Projects**  
 *Focused on Cross-Browser Automation, Component Testing & Self-Hosted Execution Grids*  
